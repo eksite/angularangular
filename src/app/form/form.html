@@ -1,0 +1,53 @@
+<headerBar></headerBar>
+
+<div class="form-container">
+    <div class="logout-container">
+        <button (click)="logout()" class="btn btn-primary logout-btn">Logout</button>
+    </div>
+    <div class="content">
+        <canvas style="background-image: url('assets/images/areas.png'); width: 230px; height: 215px;" id="canvas" class="area-image" (click)="submitCanvas($event)"></canvas>
+        <form name="form" (ngSubmit)="xCheck && rCheck && submit() " #f="ngForm" novalidate>
+            <div class="form-group x-r-inputs">
+                <label id="xLabel" class="x-r-labels" for="xValue">Choose X</label>
+                <p-multiSelect [options]="options1" [style]="{minWidth:'12em'}" [panelStyle]="{minWidth:'12em'}" #xValue="ngModel" [(ngModel)]="SelectedOptionsX" name="xValue"
+                    defaultLabel="Choose X" optionLabel="name"></p-multiSelect>
+                <!-- <div class="input-required-msg" *ngIf="f.submitted && !xCheck">X is required</div> -->
+                <!-- <div  class="input-required-msg">X is required</div> -->
+            </div>
+            <div class="form-group x-r-inputs">
+                <span class="step-span">Y: {{yFromPage}}</span>
+                <p-slider class="step-slider" [style]="{'width':'12em'}" [(ngModel)]="yFromPage" name="val1" [step]="1" [min]="1" [max]="5"></p-slider>
+            </div>
+            <div class="form-group x-r-inputs">
+                <label id="rLabel" class="x-r-labels" for="rValue">Choose R</label>
+                <p-dropdown [options]="optionsR" [style]="{minWidth:'12em'}" [panelStyle]="{minWidth:'12em'}" [(ngModel)]="SelectedR" #rValue="ngModel" name="rValue"
+                placeholder="Choose R" optionLabel="name" (onChange)="drawPoints(pointsFromServer)" ></p-dropdown>
+                <!-- <div class="input-required-msg" *ngIf="f.submitted && !rCheck">R is required</div> -->
+                <!-- <div class="input-required-msg">R is required</div> -->
+            </div>
+            <div class="submit-btn-row form-group">
+                <button class="btn btn-primary submit-btn" (click)="checker()" >Submit</button>
+            </div>
+        </form>
+        
+        <p-table  [value]="pointsFromServer">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Check</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-poi>
+                <tr>
+                    <td style="text-align: center">{{ poi.x }}</td>
+                    <td style="text-align: center">{{  poi.y }}</td>
+                    <td style="text-align: center">{{  poi.r }}</td>
+                    <td style="text-align: center">{{ poi.inArea}}</td>
+                </tr>
+            </ng-template>
+          </p-table>
+
+    </div>
+</div>

@@ -1,0 +1,84 @@
+a {
+    cursor: pointer;
+}
+
+.help-block {
+    font-size: 12px;
+    color: red;
+    width: 100%;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.form-fields {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: .4em 0;
+    width: 300px;
+}
+
+.form-fields label {
+    font-size: 1.3em;
+}
+
+.form-fields input {
+    border: 1px rgba(128, 128, 128, .2) solid;
+    margin-left: 1em;
+}
+
+.login-btn-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.reg-btn {
+    border: none;
+    background-color: rgb(14, 12, 12);
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 1.1em;
+    font-family: system-ui;
+    text-align: center;
+}
+
+.reg-btn:hover{
+    background-color: rgba(14, 12, 12, .7);
+    cursor: pointer;
+}
+
+.login-btn {
+    border: none;
+    background-color: rgb(14, 12, 12);
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.login-btn:hover{
+    background-color: rgba(14, 12, 12, .7);
+    cursor: pointer;
+}
+
+@media(max-width: 1175px) {
+
+    .login-btn-row {
+        flex-direction: column-reverse;
+    }
+
+    .login-btn, .reg-btn {
+        padding: 15px;
+        width: 100%;
+        margin: 4px 0;
+    }
+}

@@ -1,0 +1,11 @@
+.header_css {
+    background-color: rgb(14, 12, 12);
+    padding: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.header_css p{
+    color: white;
+    font-size: 20px;
+}

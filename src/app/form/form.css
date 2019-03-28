@@ -1,0 +1,125 @@
+.logout-container {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 1em;
+}
+.logout-btn{
+    border: none!important;
+    background-color: rgb(14, 12, 12);
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 1.2em;
+}
+.logout-btn:hover{
+    background-color: rgba(14, 12, 12, .7);
+    cursor: pointer;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content > * {
+    padding: 0 1em;
+}
+
+.content img {
+    /* margin-right: 2em; */
+}
+
+form {
+    width: 18em;
+    min-width: 210px;
+}
+
+.x-r-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.x-r-labels {
+    margin-right: 1em;
+}
+
+table td{
+    text-align: center;
+}
+
+.multiselect {
+    min-width: 200px;
+}
+
+.step-span {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-block-start: .5em;
+    margin-block-end: .5em;
+}
+
+.input-required-msg {
+    width: 100%;
+    font-size: .8em;
+    color: red;
+}
+
+.step-slider {
+    /* width: 12em; */
+}
+
+.submit-btn-row {
+    width: 100%;
+    padding: 1em 0;
+    text-align: right;
+}
+
+.submit-btn {
+    border: none;
+    background-color: rgb(14, 12, 12);
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 1em;
+}
+
+.submit-btn:hover{
+    background-color: rgba(14, 12, 12, .7);
+    cursor: pointer;
+}
+
+@media(max-width: 1175px) {
+    .submit-btn {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .logout-btn {
+        padding: 15px 80px;
+    }
+}
+
+@media(max-width: 818px) {
+    .content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    
+    .content canvas {
+        align-self: center;
+    }
+    
+    form {
+        align-self: center;
+    }
+
+    .logout-container {
+        text-align: center;
+        margin-top: 5px;
+    }
+}
